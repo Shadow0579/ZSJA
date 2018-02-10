@@ -59,13 +59,13 @@ function checkUsername(callback) {
           username = n;
           callback();
         } else {
-          document.getElementById("contentDiv").innerHTML = '<p>You do not have an account or you have been signed out. Please log in or create an account <a href="https://Shadow0579.github.io/Neochat/login/index.html">here</a>.</p>'
+          document.getElementById("contentDiv").innerHTML = '<p>You do not have an account or you have been signed out. Please log in or create an account <a href="https://Shadow0579.github.io/ZSJA/login/index.html">here</a>.</p>'
         }
       });
     });
   } else {
     if (!navigator.userAgent.match(/bot/g)) {
-      document.getElementById("contentDiv").innerHTML = '<p>You do not have an account or you have been signed out. Please log in or create an account <a href="https://Shadow0579.github.io/Neochat/login/index.html">here</a>.</p>'
+      document.getElementById("contentDiv").innerHTML = '<p>You do not have an account or you have been signed out. Please log in or create an account <a href="https://Shadow0579.github.io/ZSJA/login/index.html">here</a>.</p>'
     }
   }
 }
@@ -257,7 +257,7 @@ function redirectFromHub() {
       firebase.database().ref("uids/"+snapshot.key).once('value').then(function(username) {
         var container = document.getElementById("online-users");
         var node = document.createElement("A");
-        node.setAttribute("href","https://Shadow0579.github.io/Neochat/profile/index.html?u="+snapshot.key);
+        node.setAttribute("href","https://Shadow0579.github.io/ZSJA/profile/index.html?u="+snapshot.key);
         node.innerText = username.val() + "\n";
         container.appendChild(node);
         node.setAttribute("name", snapshot.key);
@@ -292,7 +292,7 @@ window.onload = function () {
     copy.setAttribute("type", "text");
     copy.readOnly = true;
     document.getElementById("share-chatroom").appendChild(copy);
-    copy.value = "https://Shadow0579.github.io/Neochat/?room=" + room;
+    copy.value = "https://Shadow0579.github.io/ZSJA/?room=" + room;
     copy.id = "share-link";
     copy.onclick = function () {
       if (!document.getElementById("share-copied")) {
@@ -581,5 +581,5 @@ function redirect(url) {
 
 function redirectToNewPrivateRoom() {
   var roomID = Math.floor(Math.random() * 1048576).toString(16) + (new Date().getTime().toString(16).substring(2, 8)) + Math.floor(Math.random() * 1048576).toString(16);
-  window.open("https://Shadow0579.github.io/Neochat/?room=" + roomID)
+  window.open("https://Shadow0579.github.io/ZSJA/?room=" + roomID)
 }
