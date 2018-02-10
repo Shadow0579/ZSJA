@@ -9,7 +9,7 @@ window.onload = function () {
   }
   else {
     if (document.cookie.replace(/(?:(?:^|.*;\s*)unichat_uid2\s*\=\s*([^;]*).*$)|^.*$/, "$1") != "") {
-      location.href = "https://Shadow0579.github.io/NSJA/?u="+document.cookie.replace(/(?:(?:^|.*;\s*)unichat_uid2\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+      location.href = "https://Shadow0579.github.io/ZSJA/?u="+document.cookie.replace(/(?:(?:^|.*;\s*)unichat_uid2\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     }
   }
   usernameDiv = document.getElementById("username");
@@ -61,7 +61,7 @@ function submit() {
       if (uid) {
         firebase.database().ref("pass/" + uid).set(btoa(document.getElementById("password").value)).then(function () {
           document.cookie = "unichat_uid2=" + uid + ";expires=" + new Date(Date.now() + 157784760000);
-          location.href = "https://Shadow0579.github.io/NSJA/?u="+uid;
+          location.href = "https://Shadow0579.github.io/ZSJA/?u="+uid;
         }).catch(function (error) {
           document.getElementById("messages").innerText = "Incorrect password!";
         });
